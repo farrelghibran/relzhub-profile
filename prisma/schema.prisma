@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Checkpoint {
+  id          Int     @id @default(autoincrement())
+  title       String
+  value       Int
+  random      String  @unique
+  active      Boolean @default(false)
+  destination String
+}
+
+model Game {
+  id       Int    @id @default(autoincrement())
+  title    String
+  content  String
+  image    String
+  statusId Int
+  Status   Status @relation(fields: [statusId], references: [id])
+}
+
+model Key {
+  id         Int      @id @default(autoincrement())
+  value      String   @unique
+  expired_at DateTime
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Relzhub {
+  id          Int      @id @default(autoincrement())
+  loader      String
+  max_steps   Int
+  discord_url String
+}
+
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean @default(false)
+  authorId  Int
+  User      User    @relation(fields: [authorId], references: [id])
+}
+
+model Status {
+  id    Int    @id @default(autoincrement())
+  title String
+  color String
+  Game  Game[]
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+  Post  Post[]
+}
