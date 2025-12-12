@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import CodeEditor from "../partials/CodeEditor";
 import { getAllRelzhubData } from "../services/relzhub";
-import { Relzhub } from "@prisma/client";
+import { Relzhub } from "../types/relzhub";
 
 export default function Script() {
   const [data, setData] = useState<Relzhub[]>([]);
