@@ -2,7 +2,7 @@ import { PrismaClient, Prisma } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const statusData: Prisma.StatusCreateInput[] = [
+const statusData: Prisma.StatusUncheckedCreateInput[] = [
   {
     title: "Active",
     color: "green",
@@ -26,7 +26,7 @@ const statusData: Prisma.StatusCreateInput[] = [
     color: "red",
   },
 ];
-const relzhubData: Prisma.RelzhubCreateInput[] = [
+const relzhubData: Prisma.RelzhubUncheckedCreateInput[] = [
   {
     loader: `loadstring(game:HttpGet("https://relzhub.farrelghibran.com/loader.lua"))`,
     discord_url: "discord.gg/relzhub",
