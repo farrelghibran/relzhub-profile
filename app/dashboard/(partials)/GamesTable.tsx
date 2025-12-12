@@ -57,8 +57,8 @@ import {
 } from "@/components/ui/command";
 import { cn } from "@/lib/utils";
 import { getAllStatus } from "@/src/services/status";
-import { Status } from "@prisma/client";
 import { notify } from "@/src/lib/notify";
+import { Status } from "@/src/types/status";
 
 export default function GamesTable() {
   const [games, setGames] = useState<Game[]>([]);

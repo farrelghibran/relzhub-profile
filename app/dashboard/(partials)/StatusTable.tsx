@@ -34,8 +34,8 @@ import {
   getAllStatus,
   updateStatus,
 } from "@/src/services/status";
-import { Status } from "@prisma/client";
 import { notify } from "@/src/lib/notify";
+import { Status } from "@/src/types/status";
 
 export default function StatusTable() {
   const [status, setStatus] = useState<Status[]>([]);
