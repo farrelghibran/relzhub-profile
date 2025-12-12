@@ -13,10 +13,10 @@ import { useRouter } from "next/navigation";
 import { createKey } from "@/src/services/key";
 import { createContentLocker } from "@/src/services/lootlabs";
 import { GravityStarsBackground } from "@/src/components/animate-ui/components/backgrounds/gravity-stars";
-import { Relzhub } from "@prisma/client";
 import { getAllRelzhubData } from "@/src/services/relzhub";
 import { RefactorDate } from "@/src/lib/refactor-date";
 import Link from "next/link";
+import { Relzhub } from "@/src/types/relzhub";
 
 export default function Page() {
   const { random } = useParams<{ random: string }>();
