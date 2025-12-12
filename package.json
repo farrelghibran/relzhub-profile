@@ -32,6 +32,8 @@
     "react-day-picker": "^9.11.3",
     "react-dom": "19.2.0",
     "react-syntax-highlighter": "^16.1.0",
+    "react-toastify": "^11.0.5",
+    "rough-notation": "^0.5.1",
     "tailwind-merge": "^3.4.0",
     "tailwind-scrollbar": "^4.0.2"
   },
