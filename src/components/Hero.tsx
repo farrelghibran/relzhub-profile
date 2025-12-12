@@ -7,8 +7,8 @@ import { AuroraText } from "@/components/ui/aurora-text";
 import { SparklesText } from "@/components/ui/sparkles-text";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { useEffect, useState } from "react";
-import { Relzhub } from "@prisma/client";
 import { getAllRelzhubData } from "../services/relzhub";
+import { Relzhub } from "../types/relzhub";
 
 export default function Hero() {
   const codeString = `local relzhub = require("Relz Hub") 
